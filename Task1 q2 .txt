@@ -1,0 +1,57 @@
+Write a blog about objects and its internal representation in Javascript
+
+
+// A JavaScript object is a collection of named values having state and behavior (properties and method)”.
+        
+ Take the case of car as example
+
+All cars have the same properties, but the property values differ from car to car. 
+All cars have the same methods, but the methods are performed at different times.//
+
+//Objects:
+
+The following code assigns a simple value (Mercedes) to a variable named car:
+    var car = 'mercedes';
+Objects are variables too. But objects can contain many values.
+
+
+var car = {Make: “Mercedes”, Model: “C-Class”, Color: “White”, Fuel: Diesel, Weight: “850kg”, Mileage: “8Kmpl”, Rating: 4.5};
+ 
+ The above code contains many values , here the variable name and the valuses are  separated  bya a " : "
+
+ JavaScript objects are containers for named values //
+
+
+//properties:
+
+The name:values pairs are called properties
+The object properties can be different primitive values, other objects and functions.
+Properties can usually be changed, added, and deleted, but some are read only.
+
+The syntax for adding a property to an object is :
+         ObjectName.ObjectProperty = propertyValue;
+
+The syntax for deleting a property from an object is:
+         delete ObjectName.ObjectProperty;
+
+The syntax to access a property from an object is:
+
+objectName.property  OR  objectName["property”]    OR   objectName[expression]
+ 
+ Properties are the values associated with a JavaScript object.//
+
+
+//Methods
+
+An object method is an object property containing a function definition.
+
+i.e.
+
+Let’s assume to start the car there will be a mechanical functionality.
+
+         function(){return ignition.on}
+
+and so similar is to stop/brake/headlights on & off, etc.
+
+Methods are actions that can be performed on objects.//
+

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>JOSON Country details</title>
+  </head>
+  <body>
+    <script>
+      //Create a new XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+
+      //Define HTTP method and URL
+      var method = "GET";
+      var url = "https://restcountries.com/v3.1/all";
+
+      //Open the request
+      xhr.open(method, url);
+
+      xhr.onload = function () {
+        
+        if (xhr.status === 200) {
+
+            console.log(xhr.responseText);
+          
+            var details = JSON.parse(xhr.responseText);
+             
+        for (let i = 0; i < details.length; i++) {
+
+            
+          console.log(details[i].name.common);
+          console.log(details[i].region);
+          console.log(details[i].subregion);
+          console.log(details[i].population);
+            }
+
+        } else {console.log("Fail",xhr.status);}
+      };
+
+      //send the request
+      xhr.send();
+    </script>
+  </body>
+</html>
