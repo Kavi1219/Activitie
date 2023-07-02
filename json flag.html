@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title> Country flags </title>
+    <title1>
+      Click the Button to See Console
+    </title1>
+    <div>
+    </div>
+    <button>
+      Click me    </button>
+  </head>
+  <body>
+    
+    <script>
+      //Create a new XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+
+      //Define HTTP method and URL
+      var method = "GET";
+      var url = "https://restcountries.com/v3.1/all";
+
+      //Open the request
+      xhr.open(method, url);
+
+      xhr.onload = function () {
+        
+        if (xhr.status === 200) {
+
+            //console.log(xhr.responseText);
+          
+            var details = JSON.parse(xhr.responseText);
+             
+        for (let i = 0; i < details.length; i++) {
+
+            console.log(details[i].flag);
+            }
+
+        } else {console.log("Error code:",xhr.status,'not found');}
+      };
+
+      //send the request
+      xhr.send();
+    </script>
+  </body>
+</html>
