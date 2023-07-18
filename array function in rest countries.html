@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>JOSON Country details</title>
+  </head>
+  <body>
+    <script>
+      //Create a new XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+
+      //Define HTTP method and URL
+      var method = "GET";
+      var url = "https://restcountries.com/v3.1/all";
+
+      //Open the request
+      xhr.open(method, url);
+
+      xhr.onload = function () {
+        
+        if (xhr.status === 200) {
+
+      var details = JSON.parse(xhr.responseText);
+      
+      var asia=details.filter((element)=>{
+        if(element.region ==='Asia'){          
+            return element.name;
+        }});
+    console.log(asia);
+
+
+
+
+    var population = details.filter((element)=>{
+        return element.population<200000;
+    })
+    console.log(population);
+
+
+
+
+    var details=JSON.parse(this.response);
+    details.forEach((element)=>{
+        console.log(element.name);
+        console.log(element.capital);
+        console.log(element.flag);
+    })
+
+
+
+    var  population = details.reduce((acc,element)=>{
+        return acc+element.population;
+    },0)
+    console.log(population);
+
+
+   var cur =[];
+        for(i = 0; i< details . length; i++ ){
+            if(details[i].currencies[0].code  ==="USD")
+            {
+                console.log(details[i].name)
+                console.log(details[i].currencies[0].code)
+            }
+            else{
+              console.log("error",XMLHttpRequest)
+            }
+        }
+
+         }
+
+      };
+
+      //send the request
+      xhr.send();
+    </script>
+  </body>
+</html>
